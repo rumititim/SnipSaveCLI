@@ -1,5 +1,8 @@
-# [SnipSave](https://snipsave.com/) Command Line Interface (CLI) #
+# [SnipSave](https://snipsave.com/) Command Line Interface (CLI) BETA VERSION #
 This is the Official Repository for the SnipSave Command Line Interface (CLI)
+
+NOTE: The SnipSave CLI is currently in Beta Mode
+
 
 ## Intro ##
 In order to interact with your SnipSave repository from the command line, you can use the SnipeSave command line interface (CLI) to do so. It is very simple to use compared to other common version control systems, while maintaining the main features.
