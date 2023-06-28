@@ -31,7 +31,9 @@ If the snippet is more than one word, simply add quotations.
 Ex:
 $ ss pull “login snippet”
 
-This will pull in the snippet into your local environment
+This will pull in the snippet into your local environment.
+
+If your Snippet is in one of the following languages, it will automatically append the file extension: Python, Javascript, Text, C#, CSS, Groovy, HTML, Java, JSON, MySQL, PHP, R, Shell, Ruby, Rust, Swift, Typescript, YAML
 
 ### ss push <local_file> <snippet_title> ###
 This command pushes the local code snippet to SnipSave. Before pushing to your repository, the snippet has to be created in the browser. This is to ensure that the command knows what Snippet is being referenced when pushing to your Snippet Repository.
