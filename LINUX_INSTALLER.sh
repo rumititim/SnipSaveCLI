@@ -4,19 +4,16 @@ then
     echo "Python 3 is installed"
     echo "Continuing with download..."
 else
-    echo "We recommend Python 3 to be used"
-    return 1
-    #echo "Continue with install (Y/N) ?"
-    #read install
+    echo "We recommend Python 3 to be used, but it is not installed"
+    read -p "Continue install without Python 3 (Y/N)? " install
 
-    #if [["$install" == "Y" || "$install" == "y"]]
-    #then
-    #    echo "Upgrading to latest Python Version"
-    #    #brew upgrade python3
-    #else
-    #    echo "SnipSave CLI is not supported with earlier versions of Python"
-    #    echo "While not necessary, we recommend upgrading before continuing"
-    #fi  
+    if [[ $install == "Y" || $install == "y" ]];
+    then
+        echo "Continuing without Python 3..."
+    else
+	echo "Exiting Installation..."
+        exit 1
+    fi  
 fi
 
 # Creating Credentials file
