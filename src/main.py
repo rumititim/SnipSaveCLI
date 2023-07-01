@@ -12,7 +12,7 @@ import configparser
 
 URL = "http://snipsavedev.com"
 
-HELP_STRING = "For more help, please visit\nour documentation at:\nhttps://snipsave.com/cli/docs"
+HELP_STRING = "For more help, please visit\nour documentation at:\nhttps://github.com/SnipSaveCLI/SnipSaveCLI/blob/main/README.md"
 
 def error_response(resp):
     print()
@@ -25,9 +25,9 @@ def help_():
     print("------------------------------------")
     print()
     print("Available Commands:")
-    print("`ss configure`                         - Add your Username and Password to the SnipSave CLI")
-    print("`ss pull <snippet_title>`              - Clone a snippet from your repository")
-    print("`ss push <local_file> <snippet_title>` - Push a snippet to your repository")
+    print("`ssv configure`                         - Add your Username and Password to the SnipSave CLI")
+    print("`ssv pull <snippet_title>`              - Clone a snippet from your repository")
+    print("`ssv push <local_file> <snippet_title>` - Push a snippet to your repository")
     print()
     print(HELP_STRING)
     print()
@@ -130,41 +130,41 @@ if (sys.argv[1] == "push"):
     # Check for no argv 2 || 3
     # Can have no arg3, but needs to match a snippet name
     if (len(sys.argv) != 4):
-        print("Incorrect Usage of `ss push`")
+        print("Incorrect Usage of `ssv push`")
         print()
         print("Correct usage is:")
-        print("ss push <local_filename> <snippet_name>")
+        print("ssv push <local_filename> <snippet_name>")
         print()
         print(HELP_STRING)
         print()
-        print("Or use the command:\n`ss help`")
+        print("Or use the command:\n`ssv help`")
         print()
     else:
         push(sys.argv[2], sys.argv[3])
 elif (sys.argv[1] == "pull"):
     # Check for no/incorrect argv 2
     if (len(sys.argv) != 3):
-        print("Incorrect Usage of `ss pull`")
+        print("Incorrect Usage of `ssv pull`")
         print()
         print("Correct usage is:")
-        print("ss pull <snippet_name>")
+        print("ssv pull <snippet_name>")
         print()
         print(HELP_STRING)
         print()
-        print("Or use the command:\n`ss help`")
+        print("Or use the command:\n`ssv help`")
         print()
     else:
         pull(sys.argv[2])
 elif (sys.argv[1] == "configure"):
     if (len(sys.argv) != 2):
-        print("Incorrect Usage of `ss configure`")
+        print("Incorrect Usage of `ssv configure`")
         print()
         print("Correct usage is:")
-        print("ss configure")
+        print("ssv configure")
         print()
         print(HELP_STRING)
         print()
-        print("Or use the command:\n`ss help`")
+        print("Or use the command:\n`ssv help`")
         print()
     else:
         configure()
