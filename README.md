@@ -14,36 +14,42 @@ The SnipSave CLI is written in python, therefore python 3.6 or greater is recomm
 ## Steps to Get Started ##
 1. Clone the repository
 2. Run the installer script, for your respective operating system Ex: if on Mac OS: run `sh MAC_INSTALLER.sh`
-3. Run `ss configure` and enter your email and password when prompted
+  - The general Steps the installer script follows are:
+    - Checking if Python 3 is installed
+    - Creating a credentials file on your machine in the location ~/.snipsave/credentials
+    - Copy the main Python file to ~/.snipsave
+    - Sets the following [alias](https://linuxize.com/post/how-to-create-bash-aliases/)
+      - alias ssv='python3 ~/.snipsave/snipsave_cli.py' 
+3. Run `ssv configure` and enter your email and password when prompted
 
 
 ## Commands ##
-All commands are preceded by `ss`
+All commands are preceded by `ssv`
 
-### ss pull <snippet name> ###
+### ssv pull <snippet name> ###
 This command is used to pull a snippet from the user’s account. It will overwrite any file with the same name as the snippet.
 
 Ex:
-$ ss pull login
+$ ssv pull login
 
 If the snippet is more than one word, simply add quotations. 
 
 Ex:
-$ ss pull “login snippet”
+$ ssv pull “login snippet”
 
 This will pull in the snippet into your local environment.
 
 If your Snippet is in one of the following languages, it will automatically append the file extension: Python, Javascript, Text, C#, CSS, Groovy, HTML, Java, JSON, MySQL, PHP, R, Shell, Ruby, Rust, Swift, Typescript, YAML
 
-### ss push <local_file> <snippet_title> ###
+### ssv push <local_file> <snippet_title> ###
 This command pushes the local code snippet to SnipSave. Before pushing to your repository, the snippet has to be created in the browser. This is to ensure that the command knows what Snippet is being referenced when pushing to your Snippet Repository.
 
 Ex:
-$ ss push login.py login
+$ ssv push login.py login
 
 This will push your snippet to your repository
 
-### ss configure ###
+### ssv configure ###
 This command is used to configure the user’s email and password in order to authenticate users from the command line. It will prompt you for your email and password, which will add your credentials to a file located at ~/.snipsave/credentials
 
 ## Throttling ##
