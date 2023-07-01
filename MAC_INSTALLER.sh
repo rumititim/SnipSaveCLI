@@ -22,7 +22,7 @@ mkdir ~/.snipsave/
 touch ~/.snipsave/credentials
 
 # Moving Download files to Snipsave Home folder
-cp ./main.py ~/.snipsave/snipsave_cli.py
+cp ./src/main.py ~/.snipsave/snipsave_cli.py
 
 echo "alias ssv='python3 ~/.snipsave/snipsave_cli.py'" >> ~/.zshrc
 
