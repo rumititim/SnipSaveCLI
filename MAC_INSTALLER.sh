@@ -4,17 +4,15 @@ then
     echo "Python 3 is installed"
     echo "Continuing with download..."
 else
-    echo "Python needs to be installed"
-    echo "Continue with install (Y/N) ?"
-    read install
-
+echo "We recommend Python 3 to be used, but it is not installed"
+    read -p "Continue install without Python 3 (Y/N)? " install
     if [["$install" == "Y" || "$install" == "y"]]
     then
         echo "Upgrading to latest Python Version"
         brew upgrade python3
     else
-        echo "SnipSave CLI is not supported with earlier versions of Python"
-        echo "While not necessary, we recommend upgrading before continuing"
+        echo "Exiting Installation..."
+        exit 1
     fi  
 fi
 
@@ -26,7 +24,7 @@ touch ~/.snipsave/credentials
 # Moving Download files to Snipsave Home folder
 cp ./main.py ~/.snipsave/snipsave_cli.py
 
-echo "alias ss='python3 ~/.snipsave/snipsave_cli.py'" >> ~/.zshrc
+echo "alias ssv='python3 ~/.snipsave/snipsave_cli.py'" >> ~/.zshrc
 
 echo "-----------------------------"
 echo ""
@@ -35,7 +33,7 @@ echo ""
 echo "To add your credentials to"
 echo "the CLI, type:"
 echo ""
-echo "$ ss configure"
+echo "$ ssv configure"
 echo ""
 echo "Or, check out the our"
 echo "documentation at"
