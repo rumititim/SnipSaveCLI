@@ -4,7 +4,7 @@ then
     echo "Python 3 is installed"
     echo "Continuing with download..."
 else
-echo "We recommend Python 3 to be used, but it is not installed"
+    echo "We recommend Python 3 to be used, but it is not installed"
     read -p "Continue install without Python 3 (Y/N)? " install
     if [["$install" == "Y" || "$install" == "y"]]
     then
@@ -37,6 +37,6 @@ echo "$ ssv configure"
 echo ""
 echo "Or, check out the our"
 echo "documentation at"
-echo "https://snipsave.com/cli/docs"
+echo "https://github.com/SnipSaveCLI/SnipSaveCLI/blob/main/README.md"
 echo ""
 echo "-----------------------------"
