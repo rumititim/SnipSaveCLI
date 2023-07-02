@@ -1,5 +1,5 @@
 # Check for Python 3
-if [[ "$(python -V)" =~ "Python 3" ]]
+if [[ "$(python3 -V)" =~ "Python 3" ]]
 then
     echo "Python 3 is installed"
     echo "Continuing with download..."
@@ -24,7 +24,8 @@ touch ~/.snipsave/credentials
 # Moving Download files to Snipsave Home folder
 cp ./src/main.py ~/.snipsave/snipsave_cli.py
 
-echo "alias ssv='python3 ~/.snipsave/snipsave_cli.py'" >> ~/.zshrc
+echo "alias ssv='python3 ~/.snipsave/snipsave_cli.py'" >> ~/.zprofile
+source ~/.zprofile
 
 echo "-----------------------------"
 echo ""
