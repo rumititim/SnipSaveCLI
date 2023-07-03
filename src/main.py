@@ -10,7 +10,7 @@ import os
 from getpass import getpass
 import configparser
 
-URL = "http://snipsavedev.com"
+URL = "https://snipsave.com"
 
 HELP_STRING = "For more help, please visit\nour documentation at:\nhttps://github.com/SnipSaveCLI/SnipSaveCLI/blob/main/README.md"
 
@@ -99,7 +99,7 @@ def pull(title):
     print("------------------------------")
     print()
     print("Successful Pull from SnipSave:")
-    print("- {}".format(title))
+    print("- {} --> {}".format(title, resp_json['new_title']))
     print()
     print("------------------------------")
     
