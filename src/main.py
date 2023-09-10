@@ -119,7 +119,21 @@ def configure():
    
     payload = login()
     resp = requests.post("{}/cli/configure".format(URL), json = payload)
-    print(resp.content)
+    resp_json = json.loads(resp.content)
+    print()
+    if resp_json['success']:
+        print("-----------------------------------------")
+        print()
+        print("Successful Configuration of SnipSave CLI")
+        print()
+        print("-----------------------------------------")
+    else:
+        print("--------------------------------------------------")
+        print()
+        print("ERROR: Unsuccessful Configuration of SnipSave CLI")
+        print()
+        print("--------------------------------------------------")
+        
 
 
 if len(sys.argv) < 2:
