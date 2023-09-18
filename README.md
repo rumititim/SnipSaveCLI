@@ -56,3 +56,21 @@ This command is used to configure the user’s email and password in order to au
 The SnipSave CLI allows for 5 requests every 30 seconds under the free tier. Upgrading to SnipSave Pro allows for a much greater 100 requests per 30 seconds. It is recommended to upgrade to SnipSave pro if your applications will be utilizing the CLI, so they are not stopped by the request limit.
 
 You can contact SnipSave Support at support@snipsave.com for details on our unlimited request plan for the CLI.
+
+## Docker environment
+
+### Build new image
+
+To build a new image run the following command:
+```
+docker build -t sni .
+```
+
+### Run a container from the built image:
+To run the container from the image build on the previous step run the following command:
+```
+docker run -it --rm --entrypoint /bin/bash sni
+```
+Inside the container you can use `ssv` command.
+
+**_IMPORTANT:_** It's not recommended to store secrets inside container file system as it's always should be stateless. Instead it's better to read secrets from container's environment variables.

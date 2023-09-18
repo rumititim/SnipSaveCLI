@@ -3,12 +3,14 @@
 Code to use the SnipSave cli
 
 """
-import requests
-import sys
+import configparser
 import json
 import os
+import sys
 from getpass import getpass
-import configparser
+from pathlib import Path
+
+import requests
 
 URL = "https://snipsave.com"
 
@@ -110,7 +112,8 @@ def configure():
     email = input("Enter Email: ")
     password = getpass("Enter Password: ")
 
-    filepath = os.path.expanduser("~/.snipsave/credentials")
+    filepath = Path("~/.snipsave/credentials").expanduser()
+    filepath.parent.mkdir(parents=True, exist_ok=True)
     config = open(filepath, "w")
     config.write("[CREDENTIALS]\n")
     config.write("EMAIL={}\n".format(email))
